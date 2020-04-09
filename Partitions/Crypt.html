@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <style>
+            img{max-height: 100%;max-width: 100%}
+        </style>
+        <div dir="rtl" style="padding:10px;border-style:solid;border-width:2px;border-radius:5px;width:85%;margin-left: auto;margin-right: auto;" align="center">
+            <p style="font-size: 24px;font-family: Times New Roman,Times,serif,-webkit-standard;"><strong>بسم الله الرحمن الرحيم</strong></p>
+            <br><br>
+            <p align="right">لتقسيم النظام بشكل يوفر CIA (السرية, السلامة,التوافرية) هناك أكثر من نموذج, من أكثر هذه المناذج مناسبةً لأجهزة سطح المكتب للمستخدم العادي هو تقسيم الهارد إلى 3 أقراص (أو أكثر في حالة إرادة عمل أكثر من قرص للبيانات) وتكون هذه الأقراص كالتالي..</p>
+            <p algin="right">(في حال الرغبة بعمل swap يستحسن إستخدام swap file بدلاً من swap partition.)</p>
+            <p align="right">أولاً قرص الإقلاع ويستحسن أن يكون غير مشفر كونه لا يحتوي على أي بيانات يمكن استغلالها وﻷن هذا القرص إذا تعرض للتلف يمكننا إصلاحه من الخارج بسهولة أكبر في حالة كان غير مشفر.</p>
+            <p align="right">ثانياً قرص النظام ويجب تشفيره بكلمة سر آمنة وسيتم مطالبتك بكلمة السر أثناء البوت وهذا قبل الدخول بالنظام وقرص النظام يحتوي على حسابات المستخدمين ويحتوي على البرامج التي تكون في النظام .</p>
+            <p align="right">ثالثاً قرص البيانات ويجب أن يكون مشفر ولكن لا يجب أن يكون مشفر بنفس كلمة المرور الخاصة بقرص النظام بل يجب تشفيره بعد قرص النظام وعزله عنه.</p>
+            <p>المصدر <a href="https://security.stackexchange.com/questions/38793/most-secure-way-to-partition-linux">هنا</a></p>
+            <p align="right"> نقوم بدايةً بالوصول لهذه النافذة من الـInstaller كما بالصورة. </p>
+            <img src="imgs/1.png">
+            <br><br>
+            <p align="right">ثم نضغط على next فنجد الصورة التالية ونقوم بعمل partition table.</p>
+            <img src="imgs/2.png">
+            <br><br>
+            <p align="right">نبدأ الآن بالتقسيم بوضع قرص للـboot بحيث لا يزيد مساحته عن 450 ميجا ولا يقل عن 150 ميجا ويكون نظام الملفات fat32 مع وضع الـflags المناسبة.</p>
+            <img src="imgs/3.png">
+            <br><br>
+            <p align="right">وبعد الموافقة عليه نختار قرص جديد ونقوم بوضع القيم التالية..</p>
+            <img src="imgs/4.png">
+            <br><br>
+            <p align="right">والقرص الأخير قرص البيانات كالتالي..</p>
+            <img src="imgs/5.png">
+            <br><br>
+            <p align="right">وهكذا يكون هناك قرص boot غير مشفر وقرص فيه home و root مشفر وقرص أخير فيه البيانات غير مشفر..</p>
+            <p align="right">الآن نريد تشفير قرص البيانات ونقوم بذلك إما من نفس الـISO فلا نقوم بإعادة التشغيل ونشفر من خلال KDE Partition أو بعد الإقلاع من نفس القرص.</p>
+            <p align="right">نقوم بفتح KDE partition وكتابة كلمة السر (تكون manjaro في الـISO) ثم نقوم بحذف القرص الخاص بالبيانات وننشئ قرص جديد بكل الحجم المتاح ونضع كلمة سر ثم نضغط apply كما بالصورة..</p>
+            <img src="imgs/6.png">
+            <br><br>
+            <p align="right">وهكذا نكون قد حققنا المطلوب من أن قرص البيانات سيكون له كلمة مرور مختلفة عن قرص النظام وقرص الإقلاع لن يكون له أي كلمة مرور.</p>
+            <img src="imgs/7.png">
+            <img src="imgs/8.png">
+            <br><br>
+            <br><br>
+            <p>للمزيد قم بالرجوع <a href="../">للصفحة الرئيسية</a></p>
+            <br>
+            <span lang="ar-EG">والسلام عليكم ورحمة الله وبركاته</span>
+            <br>
+            <p style="text-align: center;font-size: 24px;"><strong><span style="font-family: Times New Roman,Times,serif,-webkit-standard;">لا تنسونا من صالح دعائكم</span></strong></p>
+        </div>
+    </body>
+</html>
